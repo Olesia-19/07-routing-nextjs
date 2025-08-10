@@ -1,4 +1,4 @@
-import NoteDetailsPageClient from "./NoteDetails.client";
+import NoteDetailsPageClient from "./NotePreview.client";
 import { getSingleNote } from "@/lib/api";
 import {
   dehydrate,

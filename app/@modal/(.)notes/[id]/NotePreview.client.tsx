@@ -4,7 +4,7 @@ import Loader from "@/components/Loader/Loader";
 import { getSingleNote } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
-import css from "./NoteDetails.module.css";
+import css from "./NotePreview.module.css";
 import Modal from "@/components/Modal/Modal";
 
 const NoteDetailsPageClient = () => {
