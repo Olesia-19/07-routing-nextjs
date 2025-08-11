@@ -15,13 +15,10 @@ import css from "./Notes.module.css";
 
 interface NotesClientProps {
   initialData: FetchNotesResponse;
-  category: string;
+  tag: string;
 }
 
-export default function NotesClient({
-  initialData,
-  category,
-}: NotesClientProps) {
+export default function NotesClient({ initialData, tag }: NotesClientProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -38,8 +35,8 @@ export default function NotesClient({
   };
 
   const { data, isSuccess, isLoading, isError, error } = useQuery({
-    queryKey: ["notes", debouncedSearch, page],
-    queryFn: () => fetchNotes(debouncedSearch, page, category),
+    queryKey: ["notes", debouncedSearch, tag, page],
+    queryFn: () => fetchNotes(debouncedSearch, tag, page),
     placeholderData: keepPreviousData,
     initialData,
     enabled: true,

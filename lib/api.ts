@@ -11,8 +11,8 @@ export type FetchNotesResponse = {
 
 export const fetchNotes = async (
   query: string,
-  page: number,
-  tag?: string
+  tag: string,
+  page: number
 ): Promise<FetchNotesResponse> => {
   const params: {
     page: number;
