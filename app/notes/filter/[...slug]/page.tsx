@@ -8,11 +8,11 @@ type Props = {
 const NotesByFilter = async ({ params }: Props) => {
   const { slug } = await params;
   const category = slug[0] === "All" ? "" : slug[0];
-  const response = await fetchNotes("", 1, category);
+  const response = await fetchNotes("", category, 1);
 
   return (
     <div>
-      <NotesClient initialData={response} category={category} />;
+      <NotesClient initialData={response} tag={category} />;
     </div>
   );
 };

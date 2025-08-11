@@ -35,7 +35,7 @@ export default function NotesClient({ initialData, tag }: NotesClientProps) {
   };
 
   const { data, isSuccess, isLoading, isError, error } = useQuery({
-    queryKey: ["notes", debouncedSearch, tag, page],
+    queryKey: ["notes", debouncedSearch, page, tag],
     queryFn: () => fetchNotes(debouncedSearch, tag, page),
     placeholderData: keepPreviousData,
     initialData,
